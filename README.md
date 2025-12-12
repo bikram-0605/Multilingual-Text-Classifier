@@ -44,8 +44,7 @@ multilingual-text-classifier/
 
 ### 1️⃣ Clone the Repository
 ```
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/bikram-0605/Multilingual-Text-Classifier.git
 ```
 
 ### 2️⃣ Install Dependencies
