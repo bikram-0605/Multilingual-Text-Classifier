@@ -12,14 +12,16 @@ Clean and simple Streamlit UI
 
 Fast performance with model caching
 
-'''
+```
 📁 Project Structure
 ├──app.py                # Main Streamlit application
 ├──translator.ipynb      # Notebook used for testing and experiments
 ├──requirements.txt      # Dependencies
 ├──README.md             # Project documentation
 ├──.gitignore
-'''
+```
+
+
 
 
 ⚙️ Installation
