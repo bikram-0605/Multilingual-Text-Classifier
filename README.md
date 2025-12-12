@@ -1,74 +1,75 @@
-🌍 Multilingual Text Classifier
+# 🌍 Multilingual Text Classifier Using Translation + Zero-Shot Learning
 
-A Streamlit web application that translates text from any supported language to English using Helsinki-NLP MarianMT models and classifies the translated text using BART MNLI zero-shot classification. The app predicts intents such as spam, question, opinion, complaint, and request.
+## 🧾 Detailed Project Description
 
-🚀 Features
+This project implements a multilingual text classification system that combines machine translation with zero-shot learning to analyze text written in any language. The app first translates the input text to English using **Helsinki-NLP MarianMT models**, and then uses **Facebook BART MNLI** to classify the translated text into one of several categories, such as **spam**, **question**, **complaint**, **request**, or **opinion**. The entire system is deployed using a simple and interactive **Streamlit** web interface.
 
-Translate text from multiple languages → English
+## 💡 Motivation
 
-Zero-shot classification using BART MNLI
+Language diversity makes automated text classification difficult. Most NLP models are trained only on English text. This project solves that challenge by automatically translating any language to English and then performing intent classification. It demonstrates a practical and powerful multilingual NLP pipeline suitable for applications like chatbots, customer service automation, and social media analysis.
 
-Clean and simple Streamlit UI
+## 🔧 System Workflow
 
-Fast performance with model caching
+1. User enters text in any language  
+2. User specifies the source language code (e.g., `hi`, `fr`, `es`, `de`)  
+3. App loads corresponding MarianMT translation model  
+4. Text is translated into English  
+5. BART MNLI classifier predicts the text’s intent  
+6. Output includes:  
+   - Translated text  
+   - Predicted label  
+   - Confidence scores  
+
+## ✨ Features
+
+- 🌐 **Multilingual Input Support**  
+- 🔄 **Automatic Translation to English**  
+- 🎯 **Zero-Shot Classification**  
+- ⚡ **Fast Inference with Model Caching**  
+- 🖥️ **Streamlit-Based Web Interface**  
+- 📊 **Clean Output with Predicted Labels + Scores**  
+
+## 📁 Project Structure
 
 ```
-📁 Project Structure
-├──app.py                # Main Streamlit application
-├──translator.ipynb      # Notebook used for testing and experiments
-├──requirements.txt      # Dependencies
-├──README.md             # Project documentation
-├──.gitignore
+multilingual-text-classifier/
+├── app.py                # Main Streamlit application
+├── translator.ipynb      # Notebook for testing and experiments
+├── requirements.txt      # Python dependencies
+├── README.md             # Project documentation
+└── .gitignore            # Files ignored by Git
 ```
 
+## 🚀 Installation & Usage
 
-
-
-⚙️ Installation
-1. Clone the repository
+### 1️⃣ Clone the Repository
+```
 git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
+```
 
-2. Create & activate virtual environment
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
-
-3. Install dependencies
+### 2️⃣ Install Dependencies
+```
 pip install -r requirements.txt
+```
 
-4. Run the app
+### 3️⃣ Run the Application
+```
 streamlit run app.py
+```
 
-🧠 How It Works
+## 📦 Deployment
 
-User enters text + language code (e.g., hi, fr, es)
+Deploy easily on **Streamlit Cloud**:
 
-App loads the MarianMT model for translation
+1. Push repository to GitHub  
+2. Go to https://share.streamlit.io  
+3. Select your repo  
+4. Deploy  
 
-Translated English text is passed to BART MNLI classifier
+## ⚠️ Notes & Limitations
 
-App returns:
+- Translation models must support the selected language pair  
+- First model load may take a few seconds  
+- Zero-shot classification is limited to predefined labels  
 
-Translated text
-
-Predicted label
-
-Confidence scores
-
-📌 Example
-
-Input:
-"मुझे अपने ऑर्डर के बारे में शिकायत है" (hi)
-
-Output:
-
-Translation: "I have a complaint about my order"
-
-Label: complaint
-
-📦 Deployment
-
-You can deploy the app directly to Streamlit Cloud by connecting this repo.
